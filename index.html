@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thầy trò Sóc Vàng</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.google.com/share?selection.family=Playwrite+CU:wght@100..400" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+       
+
+        body {
+            background-image: url('back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Roboto', sans-serif; /* Thay đổi phông chữ cho toàn bộ trang */
+        }
+        
+        h1 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .album p {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="container">
+        <h1>Những chuyến đi bất ổn!!</h1>
+        <div class="albums">
+            <div class="album" data-album="album1">
+                <img src="images/album1/img1.jpg" alt="Album 1">
+                <p>Vũng Tàu 1🌊</p>
+            </div>
+            <div class="album" data-album="album2">
+                <img src="images/album2/img3.jpg" alt="Album 2">
+                <p>Vũng Tèo 2🌊</p>
+            </div>
+            <div class="album" data-album="album3">
+                <img src="images/album3/bk3.jpg" alt="Album 3">
+                <p>Daily!!🐰🐰</p>
+            </div>
+            <div class="album" data-album="album4">
+                <img src="images/album4/img4.jpg" alt="Album 4">
+                <p>Vườnnn Xoàiii🥭🥭</p>
+            </div>
+        </div>
+        <div class="gallery" id="gallery">
+            <button id="backBtn">Trờ về ở đây nè!!</button>
+            <div id="galleryContent"></div>
+            <button id="loadMoreBtn">Bấm vào để xem thêm nhé!!</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
