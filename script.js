@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    
     const albums = document.querySelectorAll('.album');
     const gallery = document.getElementById('gallery');
     const galleryContent = document.getElementById('galleryContent');
