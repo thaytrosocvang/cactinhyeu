@@ -53,3 +53,25 @@ h1 {
 }
 
 
+  
+.custom-play-button {
+    width: 50px;
+    height: 50px;
+    background-color: #0097ff; /* Màu nền của nút */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.custom-play-button span {
+    color: white; /* Màu của ký hiệu "play" */
+}
+
+.custom-play-button:hover {
+    background-color: #ef8400; /* Màu khi rê chuột lên nút */
+}

@@ -41,6 +41,33 @@
             <button id="loadMoreBtn">Bấm vào để xem thêm nhé!!</button>
         </div>
     </div>
+    
+    <!-- Nút phát âm thanh -->
+    <div class="custom-play-button">
+        <span>▶</span> <!-- Sử dụng ký tự đặc biệt cho nút "play" -->
+    </div>
+    <audio id="audio-player">
+        <source src="reever.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Script JavaScript -->
+    <script>
+        const playButton = document.querySelector('.custom-play-button');
+        const audioPlayer = document.getElementById('audio-player');
+
+        playButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playButton.querySelector('span').textContent = '⏸'; // Thay đổi biểu tượng thành tạm dừng
+            } else {
+                audioPlayer.pause();
+                playButton.querySelector('span').textContent = '▶'; // Thay đổi biểu tượng thành phát
+            }
+        });
+    </script>
+    
+    <!-- Thêm các script khác -->
     <script src="script.js"></script>
 </body>
 </html>
