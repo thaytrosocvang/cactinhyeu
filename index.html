@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thầy trò Sóc Vàng</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+Australia+VIC+WA+NT+Hand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.google.com/share?selection.family=Playwrite+CU:wght@100..400" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         body {
             background: url('back.jpg') center/cover no-repeat fixed;
-            font-family: 'Edu Australia VIC WA NT Hand', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
         .container {
             text-align: center;
             margin-top: 50px;
-        }
-        h1 {
-            font-family: 'Edu Australia VIC WA NT Hand', sans-serif;
-            font-size: 2em;
         }
         .albums {
             display: flex;
@@ -27,18 +23,24 @@
             gap: 20px;
         }
         .album {
+            width: 200px; /* Đặt kích thước cố định cho album */
+            height: 200px; /* Đặt kích thước cố định cho album */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             text-align: center;
         }
         .album img {
-            width: 150px; /* Kích thước cố định cho ảnh */
-            height: 180px; /* Chiều cao cố định cho ảnh */
-            object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
-            border-radius: 10px; /* Bo tròn góc ảnh */
-            transition: transform 0.3s; /* Hiệu ứng khi di chuột qua */
+            width: 100%; /* Đặt chiều rộng hình ảnh bằng với chiều rộng của album */
+            height: 100%; /* Đặt chiều cao hình ảnh bằng với chiều cao của album */
+            object-fit: cover; /* Đảm bảo hình ảnh vừa với kích thước mà không bị biến dạng */
+            border-radius: 10px; /* Thêm bo tròn cho các góc của hình ảnh */
+            transition: transform 0.3s; /* Thêm hiệu ứng chuyển đổi khi hình ảnh được hover */
         }
         .album img:hover {
-            transform: scale(1.05); /* Tăng kích thước một chút khi di chuột qua */
+            transform: scale(1.05); /* Phóng to hình ảnh khi hover */
         }
         .gallery {
             display: none;
@@ -48,21 +50,21 @@
         #backBtn, #loadMoreBtn {
             margin: 10px;
             padding: 10px 20px;
-            font-family: 'Edu Australia VIC WA NT Hand', sans-serif;
+            font-family: 'Roboto', sans-serif;
             cursor: pointer;
-            background-color: #ff9800;
+            background-color: #0097ff;
             color: #fff;
             border: none;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
         #backBtn:hover, #loadMoreBtn:hover {
-            background-color: #e68900;
+            background-color: #0097ff;
         }
         .custom-play-button {
-            position: fixed;
-            bottom: 400px;
-            right: 1200px;
+            position: fixed; /* Đặt vị trí cố định */
+            bottom: 20px;    /* Khoảng cách từ đáy của cửa sổ trình duyệt */
+            right: 20px;     /* Khoảng cách từ cạnh phải của cửa sổ trình duyệt */
             font-size: 2em;
             cursor: pointer;
             background-color: #0097ff;
@@ -77,7 +79,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Chúng mình lưu giữ tuổi thành xuân ở nơi này!!💕</h1>
+        <h1>Chúng mình lưu giữ tuổi thành xuân ở nơi này!!💕💕</h1>
         <div class="albums">
             <div class="album" data-album="album1">
                 <img src="images/album1/img1.jpg" alt="Album 1">
@@ -102,10 +104,10 @@
             <button id="loadMoreBtn">Bấm vào để xem thêm nhé!!</button>
         </div>
     </div>
-
+    
     <!-- Nút phát âm thanh -->
     <div class="custom-play-button">
-        <span>▶</span>
+        <span>▶</span> <!-- Sử dụng ký tự đặc biệt cho nút "play" -->
     </div>
     <audio id="audio-player">
         <source src="reever.mp3" type="audio/mpeg">
@@ -126,29 +128,9 @@
                 playButton.querySelector('span').textContent = '▶'; // Thay đổi biểu tượng thành phát
             }
         });
-
-        // Script để xử lý việc hiển thị gallery (ví dụ)
-        document.querySelectorAll('.album').forEach(album => {
-            album.addEventListener('click', function() {
-                const albumName = this.getAttribute('data-album');
-                document.querySelector('.albums').style.display = 'none';
-                document.getElementById('gallery').style.display = 'block';
-                // Load ảnh từ album tương ứng vào galleryContent
-                document.getElementById('galleryContent').innerHTML = `<p>Loading images from ${albumName}...</p>`;
-            });
-        });
-
-        document.getElementById('backBtn').addEventListener('click', function() {
-            document.querySelector('.albums').style.display = 'flex';
-            document.getElementById('gallery').style.display = 'none';
-        });
-
-        document.getElementById('loadMoreBtn').addEventListener('click', function() {
-            // Tải thêm ảnh vào galleryContent
-           
-        });
     </script>
     
+    <!-- Thêm các script khác -->
     <script src="script.js"></script>
 </body>
 </html>
