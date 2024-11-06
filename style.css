@@ -42,7 +42,7 @@ h1 {
     padding: 10px 20px;
     font-size: 1em;
     color: #fff;
-    background-color: #43CFFF;
+    background-color: #ff4b4b;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -73,5 +73,5 @@ h1 {
 }
 
 .custom-play-button:hover {
-    background-color: #44d1fe; /* Màu khi rê chuột lên nút */
+    background-color: #43CFFF; /* Màu khi rê chuột lên nút */
 }
